@@ -37,11 +37,23 @@ npm is node package manager tool. It uses package.json to manage the node projec
 6. What is mainModule in package.json?
 When we run `meteor run`, then meteor checks the value of mainModule in package.json. It goes to those mainModule files to run server and client.
 
-7. What usually happens in main module of server?
+7. What happens when you run `meteor run`?
+On running `meteor run`, the main module file of the server is started. Client's main module is not started. mainModule is found from package.json
+
+8. What usually happens in main module of server?
 We run `Meteor.startup()` to start up the server. This does a lot of things: i) it starts the http server, ii) it starts the application server, iii) it starts the database server. After all these servers are started, we can run a method of our own. For example: pre populating the database.
 
-8. What happens when you run `meteor run`?
-On running `meteor run`, the main module file of the server is started. Client's main module is not started.
+9. How to create a mongodb collection or make updates in it using meteor?
+Meteor has a library called mongo. We can use this library to create a collection object. We can use this collection object to insert or make updates in the collection. `new Mongo.Collection('appointmentProfile')` is used to create a collection called appointment profile. Mongo library of meteor takes care of creating the database connections etc.
+
+10. Why do we use `Accounts` library to create/update users instead of directly creating users using `users` collection?
+`users` collection usually invoves security, authentication etc. For this, Meteor provides us `Accounts` library in which it handles all the security, authentication etc. So we use `Accounts` library instead of directly creating users.
+
+11. Which library `Accounts` library uses to encrypt the password?
+`bcrypt`
+
+
+
 
 
 
