@@ -62,8 +62,41 @@ Meteor has a library called mongo. We can use this library to create a collectio
 
 `bcrypt`
 
+12. What happens when client hits the url?
 
+When client hits url, the request goes to the http server. In response, http server sends all the html, css, jsx files to the client. In the client browser, html of main module is shown and jsx of main module is run. main module of client can be found in the package.json file. 
 
+13. What does main.jsx do?
+
+We call `Meteor.startup()`. This call is very different from the `Meteror.startup()` of server's maon module. Client's startup calls sets up the DOM, sets up the meteor in the client browser. Once the setup is done, the post startup method is run. In post startup method, we render the `<App/>` component in one of the DOM's element.
+
+14. What is difference between document of mongodb and document in client browser?
+
+In mongodb, a collection(table) has various documents(rows). In client browser, document represents the DOM root.
+
+15. What is the difference between js file and jsx file?
+
+jsx file can have both javascript and xml but the js file has only js.
+
+16. What does xml in the jsx represent?
+
+In jsx, xml is the component which will eventually be a part of DOM. Remaining js part is pure javascript which will run in js engine.
+
+17. What does `export` mean in js or jsx?
+
+If we use `export` in front of any variable or function, it can be used outside that file using import.
+
+18. What is jsx component?
+
+jsx component is a lambda function. A jsx component has js code and xml code. Return type of this lambda method is xml. This xml will eventually be part of DOM.
+
+19. How to call a jsx component?
+
+Jsx component is a lambda function but we don't use typical way of calling lambda i.e. `App()` is not used where App is component name. Instead, to call a jsx component, we use `<App/>`. Similary if a jsx component takes some args, then we don't use `App("Abhishek")`. Instead we use `<App name="Abhishek" />`
+
+20. How to write js and xml in jsx
+
+We start with js. We can directly write xml in js if it's of one line. If xml is of multiple lines, then use small brackets. Once we are in xml, if we want to js, use curly brackets to enter into js mode.
 
 
 
