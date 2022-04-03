@@ -73,3 +73,8 @@ Human h = new Human("Abhishek", 23, leftEye);
 
 26. How Meteor takes care of push mode aka one request-multiple response?<br/> In server side, create a `publish` method. In client side, `subscribe` to that published method.
 
+27. Can we write useState and useTracker outside jsx component?<br/> No. useState and useTracker are React variables and they must be used inside component.
+
+28. Difference between useState and useTracker?<br/> `useTracker` takes a method and it tracks what it returns. If the methods returns something different than earlier, it updates the DOM as well. `useState` gives us a variable and its setter. When we update this variable via the setter method, it updates the DOM as well. 
+
+
